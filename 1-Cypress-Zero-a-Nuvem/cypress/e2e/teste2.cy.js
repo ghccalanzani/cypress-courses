@@ -10,7 +10,7 @@ describe('Exercício 2', () => {
     cy.get('#firstName').type('Gustavo')
     cy.get('#lastName').type('Calanzani')
     cy.get('#email').type('gustavo.calanzani@autoglass.com.br')
-    cy.get('#open-text-area').type(textoLongo, {delay : 0})
+    cy.get('#open-text-area').type(textoLongo, { delay: 0 })
     cy.get('.button[type="submit"]').click()
 
     cy.get('.success').should('be.visible')
@@ -36,7 +36,7 @@ describe('Exercício 2', () => {
     cy.get('#lastName').type('Calanzani')
     cy.get('#email').type('gustavo.calanzani@autoglass.com.br')
     cy.get('#open-text-area').type('Abcde')
-    cy.get('#phone-checkbox').click()
+    cy.get('#phone-checkbox').check()
     cy.get('.button[type="submit"]').click()
 
     cy.get('.error').should('be.visible')
