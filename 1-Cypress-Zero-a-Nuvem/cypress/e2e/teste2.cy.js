@@ -11,7 +11,7 @@ describe('Exercício 2', () => {
     cy.get('#lastName').type('Calanzani')
     cy.get('#email').type('gustavo.calanzani@autoglass.com.br')
     cy.get('#open-text-area').type(textoLongo, {delay : 0})
-    cy.get('.button[type="submit"').click()
+    cy.get('.button[type="submit"]').click()
 
     cy.get('.success').should('be.visible')
   })
@@ -21,7 +21,7 @@ describe('Exercício 2', () => {
     cy.get('#lastName').type('Calanzani')
     cy.get('#email').type('gustavo.calanzani@autoglass,com,br')
     cy.get('#open-text-area').type('Abcde')
-    cy.get('.button[type="submit"').click()
+    cy.get('.button[type="submit"]').click()
 
     cy.get('.error').should('be.visible')
   })
@@ -37,7 +37,7 @@ describe('Exercício 2', () => {
     cy.get('#email').type('gustavo.calanzani@autoglass.com.br')
     cy.get('#open-text-area').type('Abcde')
     cy.get('#phone-checkbox').click()
-    cy.get('.button[type="submit"').click()
+    cy.get('.button[type="submit"]').click()
 
     cy.get('.error').should('be.visible')
   })
@@ -51,8 +51,14 @@ describe('Exercício 2', () => {
   })
 
   it('envia o formuário com sucesso usando um comando customizado', () => {
-    cy.preencherCamposObrigatorios()
-    cy.get('.button[type="submit"').click()
+    const dados = {
+      nome: 'Gustavo',
+      sobrenome: 'Calanzani',
+      email: 'gustavo.calanzani@autoglass.com.br'
+    }
+    cy.preencherCamposObrigatorios(dados)
+    //cy.get('.button[type="submit"]').click()
+    cy.contains('button', 'Enviar').click()
 
     cy.get('.success').should('be.visible')
   })
