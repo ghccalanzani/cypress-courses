@@ -14,4 +14,9 @@ describe('Exercicio 6', () => {
     it('Simular drag and drop', () => {
         cy.get('#file-upload').selectFile('cypress/fixtures/logo.png', {action: 'drag-drop'})
     })
+
+    it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
+        cy.fixture('logo.png').as('foto-autoglass')
+        cy.get('#file-upload').selectFile('@foto-autoglass')
+    })
 })
