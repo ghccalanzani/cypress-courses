@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Exercicio 9 - Lodash, Invoke', () => {
+describe('Exercicio 9 - Lodash, Invoke e Request', () => {
     beforeEach(() => {
         cy.visit('./website/index.html')
     })
@@ -27,6 +27,21 @@ describe('Exercicio 9 - Lodash, Invoke', () => {
         cy.get('#open-text-area')
         .invoke('val', '123')
         .should('have.value', '123')
+    })
+
+    it('faz uma requisição HTTP', () => {
+        cy.request('https://cac-tat-v3.s3.eu-central-1.amazonaws.com/index.html')
+        .as('getRequest')
+        .its('status')
+        .should('equal', 200)
+    })
+
+    it('Exibir gato', () => {
+        cy.get('#cat')
+          .invoke('show')
+          .should('be.visible')
+        cy.get('#title')
+          .invoke('text', '🐈 GATO')
     })
 
   })
