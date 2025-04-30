@@ -30,7 +30,7 @@ describe('Exercicio 9 - Lodash, Invoke e Request', () => {
     })
 
     it('faz uma requisição HTTP', () => {
-        cy.request('https://cac-tat-v3.s3.eu-central-1.amazonaws.com/index.html')
+        cy.request('https://reqres.in/api/users/2')
         .as('getRequest')
         .its('status')
         .should('equal', 200)
