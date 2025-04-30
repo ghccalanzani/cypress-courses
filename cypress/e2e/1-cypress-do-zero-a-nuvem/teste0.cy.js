@@ -2,6 +2,6 @@
 
 describe('Teste de funções', () => {
     it('Teste', () => {
-      cy.visit('/')
+      cy.visit('https://example.cypress.io')
     })
   })
