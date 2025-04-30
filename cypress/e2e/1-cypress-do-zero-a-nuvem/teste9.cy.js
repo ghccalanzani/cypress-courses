@@ -36,7 +36,7 @@ describe('Exercicio 9 - Lodash, Invoke e Request', () => {
         .should('equal', 200)
     })
 
-    it('Exibir gato', () => {
+    it('exibe gato', () => {
         cy.get('#cat')
           .invoke('show')
           .should('be.visible')
