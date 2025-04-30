@@ -28,7 +28,7 @@ describe('Exercício 2', () => {
 
   it('valida campo telefone vazio ao inserir valor não numérico', () => {
     cy.get('#phone').type('ABCDE')
-    cy.get('#phone').should('not.have.value') //ou .should('have.value', '')    
+    cy.get('#phone').should('not.have.value')  
   })
 
   it('exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', () => {

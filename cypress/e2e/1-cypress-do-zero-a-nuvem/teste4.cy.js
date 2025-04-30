@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Exercicio 4', () => {
+describe('Exercicio 4 - Marcar radio button', () => {
   beforeEach(() => {
     cy.visit('./website/index.html')
   })

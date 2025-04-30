@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Exercicio 3', () => {
+describe('Exercicio 3 - Selecionar em lista', () => {
   beforeEach(() => {
     cy.visit('./website/index.html')
   })
